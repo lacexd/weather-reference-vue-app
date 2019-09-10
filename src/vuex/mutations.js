@@ -11,7 +11,6 @@ export const mutations = {
     state.settings = { ...state.settings, ...payload.threshold }
   },
   [ERROR_OCCURED](state, payload){
-    console.log(payload.error);
     state.error = payload.error
   }
 }

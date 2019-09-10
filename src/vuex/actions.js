@@ -3,7 +3,6 @@ import { ADD_LOCATION, UPDATE_LOCATIONS, UPDATE_THRESHOLD, ERROR_OCCURED } from 
 
 export const actions = {
   addLocation({ commit }, payload) {
-    console.log(getURL(payload));
     fetch(getURL(payload))
       .then((data) => { return data.json() })
       .then((location) => {
@@ -14,7 +13,6 @@ export const actions = {
       })
       .catch(() => {
         const { name } = payload;
-        console.log('error occurs');
         const error = {
           message: `Failed to fetch the weather of ${name}`
         }
